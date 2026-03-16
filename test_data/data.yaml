@@ -1,0 +1,15 @@
+Data:
+  Flow1:
+    server:     https://dev.app.agnoshealth.com/ai_dashboard/
+    browser:    chrome
+    input_data:
+      user:   test@gmail.com
+      pwd:    12345
+      #! The data should be updated based on the record under test.
+      ByrecordID:   861
+
+    expected_data:
+      user:   test@gmail.com
+      pwd:    '12345'
+      #! The data should be updated based on the record under test.
+      ByrecordID:   '861'

@@ -1,25 +1,18 @@
 *** Settings ***
-Library           SeleniumLibrary
-Library           OperatingSystem
-
-*** Variables ***
-${server}       https://dev.app.agnoshealth.com/ai_dashboard/
-${browser}      chrome
-
-*** Keywords ***
-
-Open Agnos Browser
-    # [Arguments]         ${server}           ${browser}
-    #Get Home path to use other mac
-    ${home}             Get Environment Variable            HOME
-    Open Browser        ${server}                 ${browser}  
-    ...     options=binary_location="/${home}/Documents/Chrome/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing";add_experimental_option("detach", True)         
-    ...     executable_path=/${home}/Documents/Chrome/chromedriver
-
-    Maximize Browser Window
-    sleep   10s
-
+Resource          ${CURDIR}/../config/config.resource
+# Test Teardown     Close browser
 
 *** Test Cases ***
-Open Agnos
-    Open Agnos Browser
+E2E_AID_001:E2E Move Record from open to Completed and Log Off successfully
+    # 0. Open browser
+    open_browser.Open Agnos Browser
+    # 1. Log in with a valid account
+    login.Login user to AI Dashboard
+    # 2. Select record by search
+    dashboard.Select one record by search
+    # 3. Move Record to In Progress
+    dashboard.Move Record to In Progress
+    # 4. Move Record to Complete
+    dashboard.Move Record to Complete
+    # 5. Log Out from the AI Dashboard
+    Log Out
