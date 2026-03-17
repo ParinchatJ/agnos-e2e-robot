@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ${CURDIR}/../config/config.resource
-# Test Teardown     Close browser
+Test Teardown     Close browser
 
 *** Test Cases ***
 E2E_AID_001:E2E Move Record from open to Completed and Log Off successfully
