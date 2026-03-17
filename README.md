@@ -45,3 +45,6 @@ robot ./tests/index.robot
 
 ## Screenshot
 Test execution screenshots can be viewed at `screenshot` folder
+
+## Record run automate 
+[Automation-AIDash](https://drive.google.com/file/d/17LXNrUKErdBw-kk46bYkcmcxVsvj6NrZ/view?usp=drive_link)
