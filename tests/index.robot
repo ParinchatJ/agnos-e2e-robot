@@ -4,6 +4,8 @@ Resource          ${CURDIR}/../config/config.resource
 
 *** Test Cases ***
 E2E_AID_001:E2E Move Record from open to Completed and Log Off successfully
+    [Documentation]      Verify that the user can log in, move a record to In Progress, move the record to Completed, and successfully log off from the system.
+    [Tags]               E2E     success     mainflow      regression
     # 0. Open browser
     open_browser.Open Agnos Browser
     # 1. Log in with a valid account
